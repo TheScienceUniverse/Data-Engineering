@@ -144,18 +144,20 @@ func main(){
 			for i = 0; i < nq; i++ {
 				if i == lv {
 					for j = 0; j < nx; j++ {
-		A[lv][j] = calc(T[lv][j] ,T[lv][ev],'/')
+						T[lv][j] = calc(A[lv][j], A[lv][ev], '/')
 					}
+					B[i] = calc(B[i], A[lv][ev], '/')
 				} else {
 					for j = 0; j < nx; j++ {
 						if j == ev {
-							iniV(&T[i][j]) 
+							iniV(&T[i][j])
 						} else {
 							T[i][j] = calc(A[i][j], calc(calc(A[lv][j], A[i][ev], '*'), A[lv][ev], '/'), '-')
 						}
 					}
+					B[i] = calc(B[i], calc(calc(A[i][ev], B[lv], '*'), A[lv][ev], '/'), '-')
 				}
-				B[i] = calc(B[i], calc(calc(A[lv][j], A[i][ev], '*'), A[lv][ev], '/'), '-')
+				
 			}
 			A = T
 		}
