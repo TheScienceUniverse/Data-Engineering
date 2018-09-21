@@ -175,5 +175,22 @@ func main(){
 	}
 	fmt.Println("X:",X)
 
+	s = true
+	for i = 0; i < nq; i++ {
+		if CB[i] >= nx {
+			s = false
+			fmt.Println("No suitable solution Found")
+			break
+		}
+	}
+	var z Num
+	iniV(&z)
+	if s == true {
+		for i = 0; i < nx; i++ {
+			z = calc(z, C[i], '+')
+		}
+		fmt.Println("The Solution is ", z)
+	}
+
 	fmt.Println("")
 }
