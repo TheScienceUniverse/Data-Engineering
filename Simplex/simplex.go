@@ -157,7 +157,6 @@ func main(){
 					}
 					B[i] = calc(B[i], calc(calc(A[i][ev], B[lv], '*'), A[lv][ev], '/'), '-')
 				}
-				
 			}
 			A = T
 		}
